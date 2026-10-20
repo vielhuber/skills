@@ -40,7 +40,12 @@ Section headings are tagged with the language or framework they apply to: `(PHP)
 
 ### use strict types (PHP)
 
-Always add `declare(strict_types=1);` at the top of PHP files. For new files, add it immediately. For existing files, fix them gradually.
+- Always add `declare(strict_types=1);` at the top of every new PHP file.
+- In existing PHP files, add it only when you are 100% certain it will not break existing behavior.
+- If the required compatibility changes are small and clearly safe, make them together with the declaration.
+- If there is even a small risk of breaking existing behavior, leave the declaration out of existing files.
+
+For new PHP files:
 
 ```php
 // bad
